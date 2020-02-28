@@ -21,6 +21,8 @@
   <a href="https://github.com/Rapptz/discord.py/">
       <img src="https://img.shields.io/badge/discord-py-blue.svg" alt="discord.py">
   </a>
+  <a href="https://www.codacy.com/manual/bryant.stafford/Asterion?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HenrickTheBull/Asterion&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/38e2bcea57d14420bfc23efcbdf72852"/>
+  </a>
 </p>
 <p align="center">
 
