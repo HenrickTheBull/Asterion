@@ -16,7 +16,11 @@ import asyncio
 import aiohttp
 import random
 
-client = commands.AutoShardedBot(command_prefix='a.')
+# Reading JSON Settings File
+with open("config.json", "r") as cjson:
+    config = json.load(cjson)
+
+client = commands.AutoShardedBot(command_prefix=config["prefix"])
 
 
 @client.event
@@ -30,4 +34,4 @@ async def on_message(message):
         return
 
 
-client.run()
+client.run(config["token"])
