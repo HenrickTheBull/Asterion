@@ -20,18 +20,20 @@ import random
 with open("config.json", "r") as cjson:
     config = json.load(cjson)
 
+# Define Bot Client
 client = commands.AutoShardedBot(command_prefix=config["prefix"])
 
-
+# Login Message.
 @client.event
 async def on_ready():
-    print('The Stars Call For Me')
+    print('The Stars Call For Me.')
     print("Logged in as %s#%s" % (client.user.name, client.user.discriminator))
 
+# Ignore own Messages.
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
 
-
+# Run The Bot Finally
 client.run(config["token"])
