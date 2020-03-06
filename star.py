@@ -32,8 +32,6 @@ client = commands.AutoShardedBot(command_prefix=config["prefix"])
 async def on_ready():
     print('The Stars Call For Me.')
     print('Logged on as {0} (ID: {0.id})'.format(client.user))
-    for cog in cogs:
-        client.load_extension(cog)
 
 # Ignore own Messages.
 @client.event
@@ -53,7 +51,9 @@ async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
 
 print('Loading Cogs...')
-cogs = ['cogs.meta']
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.cog'):
+        client.load_extension(f'cogs.{filename[:-4]}')
 
 # Run The Bot Finally
 client.run(config["token"])
