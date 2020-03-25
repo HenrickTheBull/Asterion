@@ -36,12 +36,6 @@ async def on_ready():
     print('Logged on as {0} (ID: {0.id})'.format(client.user))
     await load_all_extensions(client)
 
-# Ignore own Messages.
-#@client.event
-#async def on_message(message):
-#    if message.author == client.user:
-#        return
-
 
 async def load_all_extensions(client):
     """
@@ -53,10 +47,10 @@ async def load_all_extensions(client):
     for extension in cogs:
         try:
             client.load_extension(f'cogs.{extension}')
-            print(f'loaded {extension}')
+            print(f'Loaded {extension}')
         except Exception as e:
             error = f'{extension}\n {type(e).__name__} : {e}'
-            print(f'failed to load extension {error}')
+            print(f'Failed to load extension {error}')
         print('-' * 10)
 
 # Run The Bot Finally
