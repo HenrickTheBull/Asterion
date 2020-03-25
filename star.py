@@ -15,6 +15,8 @@ import os
 import asyncio
 import aiohttp
 import random
+import logging
+from pathlib import Path
 
 print('Loading Primary Config...')
 
@@ -40,20 +42,21 @@ async def on_message(message):
         return
 
 
-#Load Cog
-@client.command()
-async def load(ctx, extension):
-    client.load_extension(f'cogs.{extension}')
-
-#Unload Cog
-@client.command()
-async def unload(ctx, extension):
-    client.unload_extension(f'cogs.{extension}')
-
-print('Loading Cogs...')
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.cog'):
-        client.load_extension(f'cogs.{filename[:-4]}')
+    async def load_all_extensions(self):
+        """
+        Attempts to load all .cog files in /cogs/ as cog extensions
+        """
+        await self.wait_until_ready()
+        await asyncio.sleep(1)  # ensure that on_ready has completed and finished printing
+        cogs = [x.stem for x in Path('cogs').glob('*.cog')]
+        for extension in cogs:
+            try:
+                self.load_extension(f'cogs.{extension}')
+                print(f'loaded {extension}')
+            except Exception as e:
+                error = f'{extension}\n {type(e).__name__} : {e}'
+                print(f'failed to load extension {error}')
+            print('-' * 10)
 
 # Run The Bot Finally
 client.run(config["token"])
