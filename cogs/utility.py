@@ -9,7 +9,7 @@ class Utility(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        '''Check Response Time'''
+        '''- Check Response Time'''
         ping = ctx.message
         pong = await ctx.send('**:ping_pong:** Pong!')
         delta = pong.created_at - ping.created_at
