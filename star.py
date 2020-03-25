@@ -34,29 +34,30 @@ client = commands.AutoShardedBot(command_prefix=config["prefix"])
 async def on_ready():
     print('The Stars Call For Me.')
     print('Logged on as {0} (ID: {0.id})'.format(client.user))
+    await load_all_extensions(client)
 
 # Ignore own Messages.
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+#@client.event
+#async def on_message(message):
+#    if message.author == client.user:
+#        return
 
 
-    async def load_all_extensions(self):
-        """
-        Attempts to load all .cog files in /cogs/ as cog extensions
-        """
-        await self.wait_until_ready()
-        await asyncio.sleep(1)  # ensure that on_ready has completed and finished printing
-        cogs = [x.stem for x in Path('cogs').glob('*.cog')]
-        for extension in cogs:
-            try:
-                self.load_extension(f'cogs.{extension}')
-                print(f'loaded {extension}')
-            except Exception as e:
-                error = f'{extension}\n {type(e).__name__} : {e}'
-                print(f'failed to load extension {error}')
-            print('-' * 10)
+async def load_all_extensions(client):
+    """
+    Attempts to load all .cog files in /cogs/ as cog extensions
+    """
+    await client.wait_until_ready()
+    await asyncio.sleep(1)  # ensure that on_ready has completed and finished printing
+    cogs = [x.stem for x in Path('cogs').glob('*.py')]
+    for extension in cogs:
+        try:
+            client.load_extension(f'cogs.{extension}')
+            print(f'loaded {extension}')
+        except Exception as e:
+            error = f'{extension}\n {type(e).__name__} : {e}'
+            print(f'failed to load extension {error}')
+        print('-' * 10)
 
 # Run The Bot Finally
 client.run(config["token"])
