@@ -19,3 +19,7 @@ class fun(commands.Cog):
                 res = await r.json()
                 emojis = [':cat2: ', ':cat: ', ':heart_eyes_cat: ']
                 await ctx.send(random.choice(emojis) + res['file'])
+
+
+    def setup(bot):
+        bot.add_cog(fun(bot))
