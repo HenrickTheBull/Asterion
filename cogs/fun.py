@@ -22,4 +22,4 @@ class fun(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(Meta(client))
+    client.add_cog(fun(client))
