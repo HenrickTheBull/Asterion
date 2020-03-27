@@ -14,13 +14,13 @@ class Owner(commands.Cog):
         self.client = client
 
     async def cog_check(self, ctx):
-        return await self.bot.is_owner(ctx.author)
+        return await self.client.is_owner(ctx.author)
 
     @commands.command(hidden=True)
     async def load(self, ctx, *, module):
         """Loads a module."""
         try:
-            self.bot.load_extension(module)
+            self.client.load_extension(module)
         except commands.ExtensionError as e:
             await ctx.send(f'{e.__class__.__name__}: {e}')
         else:
@@ -30,7 +30,7 @@ class Owner(commands.Cog):
     async def unload(self, ctx, *, module):
         """Unloads a module."""
         try:
-            self.bot.unload_extension(module)
+            self.client.unload_extension(module)
         except commands.ExtensionError as e:
             await ctx.send(f'{e.__class__.__name__}: {e}')
         else:
@@ -40,7 +40,7 @@ class Owner(commands.Cog):
     async def _reload(self, ctx, *, module):
         """Reloads a module."""
         try:
-            self.bot.reload_extension(module)
+            self.client.reload_extension(module)
         except commands.ExtensionError as e:
             await ctx.send(f'{e.__class__.__name__}: {e}')
         else:
@@ -67,9 +67,9 @@ class Owner(commands.Cog):
 
     def reload_or_load_extension(self, module):
         try:
-            self.bot.reload_extension(module)
+            self.client.reload_extension(module)
         except commands.ExtensionNotLoaded:
-            self.bot.load_extension(module)
+            self.client.load_extension(module)
 
     @_reload.command(name='all', hidden=True)
     async def _reload_all(self, ctx):
