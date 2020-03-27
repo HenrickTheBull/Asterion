@@ -10,7 +10,7 @@ class fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['cat', 'randomcat'])
+    @commands.command(aliases=['cat', 'randomcat', 'mitch'])
     async def neko(self, ctx):
         '''Hey Mitch, wanna see a cat?'''
         async with aiohttp.ClientSession() as cs:
