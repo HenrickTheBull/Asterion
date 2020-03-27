@@ -21,5 +21,5 @@ class fun(commands.Cog):
                 await ctx.send(random.choice(emojis) + res['file'])
 
 
-    def setup(bot):
-        bot.add_cog(fun(bot))
+def setup(client):
+    client.add_cog(Meta(client))
