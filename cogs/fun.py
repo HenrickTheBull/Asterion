@@ -12,7 +12,7 @@ class fun(commands.Cog):
 
     @commands.command(aliases=['cat', 'randomcat', 'mitch'])
     async def neko(self, ctx):
-        '''Hey Mitch, wanna see a cat?'''
+        """Hey Mitch, wanna see a cat?"""
         async with aiohttp.ClientSession() as cs:
             async with cs.get('http://aws.random.cat/meow') as r:
                 res = await r.json()

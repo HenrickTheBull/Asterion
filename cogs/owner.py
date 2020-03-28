@@ -16,7 +16,17 @@ class Owner(commands.Cog):
     async def cog_check(self, ctx):
         return await self.client.is_owner(ctx.author)
 
+async def quit_bot(bot, context, message):
+    """Stop the bot from running"""
+    await message.channel.send('I am going to sleep. :zzz:')
+    bot.loop.stop()
 
+
+async def restart_bot(bot, context, message):
+    """Restart the bot"""
+    await message.channel.send('I am restarting, give me a second.')
+    bot.restart = True
+    bot.loop.stop()
 
 
 def setup(client):
