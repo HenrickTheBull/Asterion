@@ -46,6 +46,23 @@ class fun(commands.Cog):
                 emojis = [':fox: ']
                 await ctx.send(random.choice(emojis) + res['image'])
 
+    @commands.command(aliases=['catf', 'randomcatfact', 'mitchfact'])
+    async def nekofact(self, ctx):
+        """Hey Mitch, wanna hear a cat fact?"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://some-random-api.ml/facts/cat') as r:
+                res = await r.json()
+                await ctx.send(res['fact'])
+
+    
+    @commands.command(aliases=['dogf', 'randomdogfact', 'kunfact'])
+    async def dogfact(self, ctx):
+        """Hey you, wanna hear a cat fact?"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://some-random-api.ml/facts/dog') as r:
+                res = await r.json()
+                await ctx.send(res['fact'])
+
 
 def setup(client):
     client.add_cog(fun(client))
