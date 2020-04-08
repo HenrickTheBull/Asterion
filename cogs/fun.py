@@ -28,5 +28,15 @@ class fun(commands.Cog):
                 emojis = [':dog:', ':service_dog:', ':guide_dog:']
                 await ctx.send(random.choice(emojis) + res['message'])
 
+    @commands.command(aliases=['redpanda', 'randdompanda', 'panpan', 'paradox'])
+    async def rpanda(self, ctx):
+        """Hey you, wanna see a Red Panda?"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://some-random-api.ml/img/red_panda') as r:
+                res = await r.json()
+                emojis = [':dog:', ':service_dog:', ':guide_dog:']
+                await ctx.send(random.choice(emojis) + res['link'])
+
+
 def setup(client):
     client.add_cog(fun(client))
