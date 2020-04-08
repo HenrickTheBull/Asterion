@@ -26,7 +26,7 @@ class fun(commands.Cog):
             async with cs.get('https://dog.ceo/api/breeds/image/random') as r:
                 res = await r.json()
                 emojis = [':dog:', ':service_dog:', ':guide_dog:']
-                await ctx.send(random.choice(emojis) + res['file'])
+                await ctx.send(random.choice(emojis) + res['message'])
 
 def setup(client):
     client.add_cog(fun(client))
