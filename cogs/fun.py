@@ -4,6 +4,7 @@ import textwrap
 import urllib.parse
 import random
 import aiohttp
+import time
 
 class fun(commands.Cog):
 
@@ -62,6 +63,17 @@ class fun(commands.Cog):
             async with cs.get('https://some-random-api.ml/facts/dog') as r:
                 res = await r.json()
                 await ctx.send(res['fact'])
+
+
+    @commands.command(aliases=['rjoke'])
+    async def joke(self, ctx):
+        """"I got a funny joke for ya!"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://official-joke-api.appspot.com/random_joke') as r:
+                res = await r.json()
+                await ctx.send(res['setup'])
+                time.sleep(5)
+                await ctx.send(res['punchline'])
 
 
 def setup(client):
