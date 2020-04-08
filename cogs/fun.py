@@ -37,6 +37,15 @@ class fun(commands.Cog):
                 emojis = [':game_die: ']
                 await ctx.send(random.choice(emojis) + res['link'])
 
+    @commands.command(aliases=['randomfox'])
+    async def fox(self, ctx):
+        """Hey you, wanna see some foxes?"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://randomfox.ca/floof/') as r:
+                res = await r.json()
+                emojis = [':fox: ']
+                await ctx.send(random.choice(emojis) + res['image'])
+
 
 def setup(client):
     client.add_cog(fun(client))
