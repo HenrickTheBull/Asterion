@@ -19,5 +19,14 @@ class fun(commands.Cog):
                 emojis = [':cat2: ', ':cat: ', ':heart_eyes_cat: ']
                 await ctx.send(random.choice(emojis) + res['file'])
 
+    @commands.command(aliases=['pooch', 'randomdog', 'kun'])
+    async def dog(self, ctx):
+        """Hey you, wanna see a dog?"""
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://dog.ceo/api/breeds/image/random') as r:
+                res = await r.json()
+                emojis = [':dog:', ':service_dog:', ':guide_dog:']
+                await ctx.send(random.choice(emojis) + res['file'])
+
 def setup(client):
     client.add_cog(fun(client))
