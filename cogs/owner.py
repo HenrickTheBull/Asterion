@@ -26,7 +26,7 @@ class Owner(commands.Cog):
     async def restart_bot(self, context, message):
      """Restart the bot"""
      await message.channel.send('I am restarting, give me a second.')
-     bot.restart = True
+     client.restart = True
      client.loop.stop()
 
 
