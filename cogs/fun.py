@@ -34,7 +34,7 @@ class fun(commands.Cog):
         async with aiohttp.ClientSession() as cs:
             async with cs.get('https://some-random-api.ml/img/red_panda') as r:
                 res = await r.json()
-                emojis = [':dog:', ':service_dog:', ':guide_dog:']
+                emojis = [':game_die: ']
                 await ctx.send(random.choice(emojis) + res['link'])
 
 
