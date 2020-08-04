@@ -15,7 +15,7 @@ class fun(commands.Cog):
     async def neko(self, ctx):
         """Hey Mitch, wanna see a cat?"""
         async with aiohttp.ClientSession() as cs:
-            async with cs.get('http://aws.random.cat/meow') as r:
+            async with cs.get('https://cataas.com/cat') as r:
                 res = await r.json()
                 emojis = [':cat2: ', ':cat: ', ':heart_eyes_cat: ']
                 await ctx.send(random.choice(emojis) + res['file'])
