@@ -39,3 +39,7 @@
  Asterion Discord Bot. Asterion is the Minotaur, his name means "The Starry One."
 
  Please check the [Wiki](https://github.com/HenrickTheBull/Asterion/wiki/Home/) for installation, hosting, road map, and more.
+
+ Use start.sh to start the bot using the current Production branch, or use beta.sh to use the current Beta branch. You will have to edit the asterion.service systemd unit.
+
+ **Asterion ONLY works on Linux as of this writing**
