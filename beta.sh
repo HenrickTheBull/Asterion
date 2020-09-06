@@ -3,4 +3,6 @@
 
 git pull origin beta
 
+pip install -r requirements.txt
+
 systemctl restart asterion
