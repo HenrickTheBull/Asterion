@@ -37,3 +37,5 @@
 
 
  Asterion Discord Bot. Asterion is the Minotaur, his name means "The Starry One."
+
+ Please check the [Wiki](https://github.com/HenrickTheBull/Asterion/wiki/Home/) for installation, hosting, road map, and more.
