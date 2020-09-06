@@ -9,11 +9,11 @@
 <h4 align="center">Discord Bot For Henrick's Community</h4>
 
 <p align="center">
-  <a href="https://discord.gg/red">
-    <img src="https://discordapp.com/api/guilds/584090764913672218/widget.png?style=shield" alt="Discord Server">
+  <a href="https://discord.gg/nTkEcw4">
+    <img src="https://discordapp.com/api/guilds/249225992894283776/widget.png?style=shield" alt="Discord Server">
   </a>
-  <a href="https://www.subscribestar.com/henrick-the-bull">
-    <img src="https://img.shields.io/badge/Support-Asterion!-yellow.svg" alt="Support Asterion on Subscribe Star!">
+  <a href="https://www.sponsus.org/henrickthebull">
+    <img src="https://img.shields.io/badge/Support-Asterion!-yellow.svg" alt="Support Asterion on Sponsus!">
   </a>
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?" alt="Made with Python 3.8">
