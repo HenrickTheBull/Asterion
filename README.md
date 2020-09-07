@@ -45,6 +45,6 @@
  **Asterion ONLY works on Linux as of this writing**
 
 
-<script id="asciicast-EAMVIm0gJFxg8oXBSkhSAeNG4" src="https://asciinema.org/a/EAMVIm0gJFxg8oXBSkhSAeNG4.js" async></script>
+[![asciicast](https://asciinema.org/a/EAMVIm0gJFxg8oXBSkhSAeNG4.svg)](https://asciinema.org/a/EAMVIm0gJFxg8oXBSkhSAeNG4)
 
 DOES IT WORK? Maybe.
