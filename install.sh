@@ -13,9 +13,9 @@ pip install --upgrade pip
 
 pip install -r requirements.txt
 
-cp /service/asterion.service /usr/lib/systemd/systemd
+cp /service/asterion.service /usr/lib/systemd/system
 
-cp /service/lavalink.service /usr/lib/systemd/systemd
+cp /service/lavalink.service /usr/lib/systemd/system
 
 systemctl enable asterion
 
