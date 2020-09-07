@@ -29,7 +29,7 @@
   <a href="https://github.com/Rapptz/discord.py/">
       <img src="https://img.shields.io/badge/discord-py-blue.svg?style=for-the-badge&logo=discord" alt="discord.py">
   </a>
-
+ <img src="https://img.shields.io/badge/Version-0.0.118%20St.%20Michel%20Ave-%2300A9FF?style=for-the-badge">
 </div>
 
 ***
