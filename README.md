@@ -40,6 +40,6 @@
 
  Please check the [Wiki](https://github.com/HenrickTheBull/Asterion/wiki/Home/) for installation, hosting, road map, and more.
 
- Use start.sh to start the bot using the current Production branch, or use beta.sh to use the current Beta branch. You will have to edit the asterion.service systemd unit.
+ Use start.sh to start the bot using the current Production branch, or use beta.sh to use the current Beta branch. You will have to edit the asterion.service systemd unit and the lavalink.service systemd unit so that they point to the right working directories. I'll have that fixed in a future version.
 
  **Asterion ONLY works on Linux as of this writing**
