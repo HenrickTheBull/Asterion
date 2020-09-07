@@ -5,7 +5,6 @@ chardet
 git+https://github.com/Rapptz/discord-ext-menus
 discord.py
 idna
-lavalink
 multidict
 wavelink
 websockets
