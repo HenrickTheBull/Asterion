@@ -12,7 +12,7 @@ class RoleConvertor(commands.Converter):
             return [await commands.RoleConverter().convert(ctx, raw_role) for raw_role in argument.split()]
 
 
-class CosmosGuildConverter(commands.Converter):
+class AsterGuildConverter(commands.Converter):
 
     async def convert(self, ctx, argument):
         if not (guild := ctx.bot.get_guild(int(argument))):
@@ -20,7 +20,7 @@ class CosmosGuildConverter(commands.Converter):
         return await ctx.bot.guild_cache.get_profile(guild.id)
 
 
-class CosmosUserProfileConverter(commands.Converter):
+class AsterUserProfileConverter(commands.Converter):
 
     async def convert(self, ctx, argument):
         if not (user := await commands.UserConverter().convert(ctx, argument)):
