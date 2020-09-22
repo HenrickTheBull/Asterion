@@ -72,7 +72,7 @@ class fun(commands.Cog):
             async with cs.get('https://official-joke-api.appspot.com/random_joke') as r:
                 res = await r.json()
                 await ctx.send(res['setup'])
-                time.sleep(10)
+                time.sleep(5)
                 await ctx.send(res['punchline'])
 
 
