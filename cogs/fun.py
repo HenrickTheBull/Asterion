@@ -64,7 +64,7 @@ class fun(commands.Cog):
                 res = await r.json()
                 await ctx.send(res['fact'])
   
- @commands.command(aliases=['pandaf', 'randompandafact','pandainfo'])
+    @commands.command(aliases=['pandaf', 'randompandafact','pandainfo'])
     async def pandafact(self, ctx):
         """Wanna know something about Panda's?"""
         async with aiohttp.ClientSession() as cs:
