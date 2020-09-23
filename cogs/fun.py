@@ -75,15 +75,6 @@ class fun(commands.Cog):
                 time.sleep(5)
                 await ctx.send(res['punchline'])
                 
-                       
-     @commands.command(aliases=['pandaf', 'randompandafact'])
-     async def pandafact(self, ctx):
-         """Wanna know something about Panda's?"""
-         async with aiohttp.ClientSession() as cs:
-             async with cs.get('https://some-random-api.ml/facts/panda') as r:
-                 res = await r.json()
-                 await ctx.send(res['fact'])
-
-
+                
 def setup(client):
     client.add_cog(fun(client))
